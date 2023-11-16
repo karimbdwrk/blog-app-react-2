@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import BlogPage from "./pages/BlogPage";
 import ArticlePage from "./pages/ArticlePage";
 import NewArticlePage from "./pages/NewArticlePage";
+import EditArticlePage from "./pages/EditArticlePage";
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ function App() {
 				<Route path='/blog' element={<BlogPage />} />
 				<Route path='/article/:id' element={<ArticlePage />} />
 				<Route path='/newarticle' element={<NewArticlePage />} />
+				<Route path='/editarticle/:id' element={<EditArticlePage />} />
 			</Routes>
 		</Router>
 	);

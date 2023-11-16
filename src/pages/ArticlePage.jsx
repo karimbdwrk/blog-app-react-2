@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ArticlePage = () => {
 	const [article, setArticle] = useState({});
@@ -15,7 +15,7 @@ const ArticlePage = () => {
 	const fetchData = async () => {
 		try {
 			const response = await fetch(
-				`http://localhost:1337/api/articles/${id}`,
+				`http://localhost:1337/api/articles/${id}?populate=*`,
 				{
 					method: "GET",
 					headers: {
@@ -40,6 +40,10 @@ const ArticlePage = () => {
 				<>
 					<h1>{article?.attributes?.title}</h1>
 					<p>{article?.attributes?.content}</p>
+					<p>
+						{article?.attributes?.categorie.data.attributes.title}
+					</p>
+					<Link to={`/editarticle/${id}`}>Edit article</Link>
 				</>
 			)}
 		</>
