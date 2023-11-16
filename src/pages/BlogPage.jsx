@@ -54,6 +54,7 @@ const BlogPage = () => {
 							</Link>
 						</div>
 					))}
+					<Link to={`/newarticle`}>Créer un nouvel article</Link>
 				</div>
 			)}
 		</>
